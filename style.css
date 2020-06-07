@@ -12,7 +12,7 @@ ul,li{
 	list-style: none;
 }
 .box{
-	width: 1200px;
+	width: 600px;
 	height: 397px;
 	margin: 0 auto;
 	margin-top:10px;
@@ -20,12 +20,12 @@ ul,li{
 	overflow: hidden;
 }
 .slider{
-	width: 8400px;
+	width: 4800px;
 	position: absolute;
-	left: -1200px;
+	left: -600px;
 }
 .slide{
-	width: 1200px;
+	width: 600px;
 	overflow: hidden;
 	float: left;
 }
@@ -35,10 +35,10 @@ ul,li{
 	height: 50px;
 	text-align: center;
 	cursor: pointer;
-	color: #fff;
+	/* color: #fff; */
 	top: 175px;
 	line-height: 50px;
-	background: rgb(255,0,0);
+	background:white;
 	font-size: 30px;
 	position: absolute;
 	/* display: none; */
@@ -52,7 +52,7 @@ ul,li{
 }
 .nav{
 	position: absolute;
-	left: 500px;
+	/* left: 500px; */
 	bottom: 20px;
 }
 .nav>li{
@@ -67,6 +67,6 @@ ul,li{
 	border-radius: 50%;
 }
 .nav .active{
-	background: red;
-	color: white;
+	background: white;
+	/* color: ; */
 }

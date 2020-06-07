@@ -1,12 +1,13 @@
 function Banner(){
     var $all=$('<div>'
                 +'<div class="slider" id="slider">'
-                    +'<div class="slide"><img src="img/b5.png" alt=""></div>'
+                    +'<div class="slide"><img src="img/b6.png" alt=""></div>'
                     +'<div class="slide"><img src="img/b1.png" alt=""></div>'
                     +'<div class="slide"><img src="img/b2.png" alt=""></div>'
                     +'<div class="slide"><img src="img/b3.png" alt=""></div>'
                     +'<div class="slide"><img src="img/b4.png" alt=""></div>'
                     +'<div class="slide"><img src="img/b5.png" alt=""></div>'
+                    +'<div class="slide"><img src="img/b6.png" alt=""></div>'
                     +'<div class="slide"><img src="img/b1.png" alt=""></div>'
                 +'</div>'
                 +'<span id="left"><</span>'
@@ -17,6 +18,7 @@ function Banner(){
                     +'<li>3</li>'
                     +'<li>4</li>'
                     +'<li>5</li>'
+                    +'<li>6</li>'
                 +'</ul>'
             +'</div>'
             );
@@ -28,7 +30,7 @@ function Banner(){
         $right=$all.find('#right'),
         $span=$all.find('span'),
         index=0,
-        timer = setInterval(next,3000);
+        timer = setInterval(next,2000);
 
         //.eq()遍历nav 设定active
         $nav.find('li').eq(0).addClass('active');
@@ -37,14 +39,14 @@ function Banner(){
     function next(){
         index++;
         $nav.children().removeClass('active');
-        if(index >= 6){
-            $slider.animate({left:-index*1200},'slow',function(){
-                $slider.css('left',-1200);
+        if(index >=7){
+            $slider.animate({left:-index*600},'slow',function(){
+                $slider.css('left',-600);
             });
             index = 1;
             
         }
-        $slider.animate({left:-index*1200},'slow');
+        $slider.animate({left:-index*600},'slow');
         $nav.children().eq(index-1).addClass('active');
     }
     function prev(){
@@ -52,11 +54,11 @@ function Banner(){
         $nav.children().removeClass('active');
         if(index <= 0){
             $slider.animate({left:0},'slow',function(){
-                $slider.css('left',-5*1200);
+                $slider.css('left',-6*600);
             });
-            index = 5;
+            index = 6;
         }
-        $slider.animate({left:-index*1200},'slow');
+        $slider.animate({left:-index*600},'slow');
         $nav.children().eq(index-1).addClass('active');
     }
     //鼠标移入
@@ -67,7 +69,7 @@ function Banner(){
     //鼠标移出
     $box.mouseleave(function () {
         $span.animate({ opacity:0 })
-        timer = setInterval(next, 3000);
+        timer = setInterval(next, 2000);
     })
 
 
@@ -79,7 +81,7 @@ function Banner(){
             $nav.children().removeClass('active');
             $(this).addClass('active');
             index = Number($(this).html());
-            $slider.animate({left:-index*1200},'slow');
+            $slider.animate({left:-index*600},'slow');
         })
         $left.click(prev);
         $right.click(next);
